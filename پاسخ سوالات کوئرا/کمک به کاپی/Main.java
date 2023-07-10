@@ -1,20 +1,22 @@
 import java.util.Scanner;
- 
-public class Main {
- 
-    public static Scanner sc;
- 
- 
+
+/**
+ * @Author: Mohammadyar Barandov
+ *
+ * simpler solution without need of using array.
+ */
+public class Test {
+
     public static void main(String[] args) {
-        sc = new Scanner(System.in);
-        String inp = sc.nextLine();
-        String[] inp_arr = inp.split(" ");
- 
- 
-        for (int i = 1; i <= Integer.parseInt(inp_arr[0]);i++)
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String s = sc.next();
+        for (int i = 0; i < n; i++) {
             System.out.print("copy of ");
- 
-        System.out.print(inp_arr[1]);
+        }
+        System.out.println(s);
+
+        sc.close();
     }
- 
+
 }
