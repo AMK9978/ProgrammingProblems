@@ -1,31 +1,38 @@
+
 import java.util.Scanner;
- 
+
 public class Main {
-    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        int num = sc.nextInt();
-        String currentName;
-        int tempCount=0;
-        int counter=0;
-        int maxCounter=0;
-        int tempLength=0;
-        char[] ch = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y' ,'z'};
-        for (int i=0; i<=num; i++)
-        {
-            currentName = sc.nextLine();
-            tempLength = currentName.length();
-            for(int j=0; j<=25;j++)
-            {
-                tempCount = currentName.replace(String.valueOf(ch[j]), "").length();
-                if(tempCount==tempLength)
-                    continue;
-                counter++;
-                tempCount=0;
+
+	// Better Solution
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        String names;
+
+        int [] number = new int[n];
+        for (int i = 0; i < n; i++) {
+            int count=0;
+            names = sc.next();
+            char[] chars = names.toCharArray();     
+            for (int j = 0; j < names.length(); j++) {
+                for (int k = j+1; k < names.length(); k++) {
+                    if (chars[j] == chars[k] && chars[j] !=' ') {   
+                        count++;
+                        chars[k] = ' '; //Set chars[k] to ' ' to avoid printing visited character
+                    }
+                }
             }
-            if(counter>maxCounter)
-                maxCounter = counter;
-            counter=0;
+            number[i] = names.length()-count;  
         }
-        System.out.println(maxCounter);
+        int max = number[0];
+        for (int i = 0; i < number.length; i++) {
+             if (number[i] > max)
+                 max = number[i];
+        }
+        System.out.println(max);
+        sc.close();
     }
 }

@@ -1,30 +1,30 @@
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.Scanner;
- 
+
+// Simpler solution
+
 public class Main {
-    static Scanner sc;
+
     public static void main(String[] args) {
-        sc = new Scanner(System.in);
- 
-        int number;
-        String result = "";
-        int counter = 0;
- 
-        while (true) {
-            number = sc.nextInt();
- 
-            if(number == 0)
-                break;
- 
-            if(counter==0)
-                result = String.valueOf(number);
-            else
-                result = String.valueOf(number) + '\n' + result;
- 
-            counter++;
+
+        Scanner sc = new Scanner(System.in);
+        int [] num = new int[1000];
+        int i=0;
+
+        int input;
+
+        while ( (input = sc.nextInt())!=0 ){
+
+            num[i] = input;
+            i++;
         }
- 
-        System.out.println(result);
+
+            for (int j=i;j>=0;j--) {
+                    if (num[j]==0)
+                        continue;
+                System.out.println(num[j]);
+
+        }
+
+
     }
 }
