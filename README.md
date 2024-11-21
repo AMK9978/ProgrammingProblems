@@ -8,4 +8,8 @@ Our answers to some programming problems, like ACM ICPC problems and others. (Al
 ```
 git clone https://github.com/<insert-your-username>/ProgrammingProblems.git
 ```
-please feel free and let's start :)
+
+## Contribution
+Contributions are more than welcome! Feel free to open a PR of your tested solutions :)
+
+If there is a previous answer to a question and you have a better (simpler, more readable, etc) answer, put the previous one in a dir named "AMK-solution" or "original-solution" in case the previous answer is not written by me.
